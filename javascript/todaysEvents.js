@@ -10,3 +10,15 @@ back_to_main_btn.addEventListener("click", function(){
 
   }
 }, false);
+
+var todaysrow = document.getElementsByClassName("todaysrow");
+
+for (var i = 0; i < todaysrow.length; i++) {
+  todaysrow[i].addEventListener("mouseover", function() {
+      this.style.backgroundColor = 'red';
+    }, false);
+
+    todaysrow[i].addEventListener("mouseout", function() {
+        this.style.backgroundColor = '#212529';
+      }, false);
+}
