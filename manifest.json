@@ -1,0 +1,29 @@
+{
+
+  "name": "MySTV",
+
+  "description": "My STV.",
+
+  "version": "0.1",
+
+  "app": {
+
+    "background": {
+
+      "scripts": ["background.js"]
+
+    }
+
+  },
+
+  "icons": { "16": "icon-16.png", "128": "icon-128.png" },
+
+  "kiosk_enabled": true,
+
+  "sandbox": {
+    "pages": [
+      "window.html",
+      "todaysEvents.html"
+    ]}
+
+}

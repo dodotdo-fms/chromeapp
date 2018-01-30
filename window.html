@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MYSTV</title>
+<link href="css/main.css" rel="stylesheet" type="text/css">
+<link href="css/todaysEvents.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <div class="wrapper" id="main">
+    <div class="slideshow-container">
+      <img id="logo" src="images/drawable-hdpi/ic_logo.png">
+      <div class="mySlides fade">
+        <img src="images/drawable-hdpi/main_image_bg.png" style="width:100%">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="images/drawable-hdpi/bg_02.png" style="width:100%">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="images/drawable-hdpi/bg_03.png" style="width:100%">
+      </div>
+      <div class="overlay">
+      	<header class="textAndTime"><font color="ffffff" size=40dp>
+      		<div class="roomAndName">
+      			RN 1952<br>
+      			James Kim
+      		</div>
+      		<div id="time">
+      		</div>
+      		<div class="message">
+      			Welcome to Royal Caribbean<br>
+      			International.
+      		</div>
+      	</header>
+    		<div class="menu">
+    		    <div class="in_menu" id="watchTV_btn">
+              <div class="menu_text">WATCH TV</div>
+      			</div>
+    			  <div class="in_menu" id="todaysEvents_btn">
+              <div class="menu_text">TODAY'S EVENTS</div>
+              <!--<button onclick="location.href='./todaysEvents.html';">ya</button>-->
+      			</div>
+            <div class="in_menu" id="request_btn">
+    				  <div class="menu_text">REQUEST</div>
+            </div>
+
+            <div class="in_menu" id="amenities_btn">
+    				  <div class="menu_text">AMENITIES</div>
+            </div>
+
+            <div class="in_menu" id="excursions_btn">
+    				  <div class="menu_text">EXCURSIONS</div>
+            </div>
+
+            <div class="in_menu" id="entertainment_btn">
+    				  <div class="menu_text">ENTERTAINMENT</div>
+            </div>
+    	  </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper bl_body" id="todaysEvents">
+    <header id="todaysheader">
+      <div class="le">TODAY'S EVENTS</div>
+      <div class="ri" id="back_to_main_btn"><img src="images/drawable-hdpi/ic_back.png">Back</div>
+    </header>
+    <div class="contents">
+      <table class="todaystable" rules="rows">
+        <tr>
+          <th class="fir">Time</th>
+          <th class="cen">Activity</th>
+          <th class="last">Location</th>
+        </tr>
+        <tr>
+          <td>14:00</td>
+          <td>Free Advertising For Your Online Business</td>
+          <td class="last_col">Deck 13</td>
+        </tr>
+        <tr>
+          <td>14:00</td>
+          <td>Free Advertising For Your Online Business</td>
+          <td class="last_col">Deck 13</td>
+        </tr>
+        <tr>
+          <td>14:00</td>
+          <td>Free Advertising For Your Online Business</td>
+          <td class="last_col">Deck 13</td>
+        </tr>
+        <tr>
+          <td>14:00</td>
+          <td>Free Advertising For Your Online Business</td>
+          <td class="last_col">Deck 13</td>
+        </tr>
+        <tr>
+          <td>14:00</td>
+          <td>Free Advertising For Your Online Business</td>
+          <td class="last_col">Deck 13</td>
+        </tr>
+      </table>
+      <div class="todayscontent">
+        <div class="event_pt">
+          <img src="images/tv_event.jpg">
+        </div>
+        <p>Free Advertising For Your Online Business</p>
+        <a href="#" id="book_now">
+          BOOK NOW
+        </a>
+        <a href="#" id="detail">
+          DETAIL
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+
+  <script src="javascript/main.js"></script>
+  <script src="javascript/todaysEvents.js"></script>
+</body>
+</html>
