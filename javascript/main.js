@@ -72,16 +72,12 @@ var todaysEvents = document.getElementById("todaysEvents");
 var back_to_main_btn = document.getElementById("back_to_main_btn");
 
 todaysEvents_btn.addEventListener("click", function(){
-  if (todaysEvents.style.display == 'none') {
+
     main.style.display = 'none';
     todaysEvents.style.display = 'block';
 
-  }
-  else {
-    main.style.display = 'block';
-    todaysEvents.style.display = 'none';
 
-  }
+  
 }, false);
 
 
