@@ -16,14 +16,10 @@
 
   },
 
+  "permissions": ["webview"],
+
   "icons": { "16": "icon-16.png", "128": "icon-128.png" },
 
-  "kiosk_enabled": true,
-
-  "sandbox": {
-    "pages": [
-      "window.html",
-      "todaysEvents.html"
-    ]}
+  "kiosk_enabled": true
 
 }

@@ -48,36 +48,38 @@ function addZeros(num, digit) { // 자릿수 맞춰주기
 	  return zero + num;
 }
 
-var in_menu = document.getElementsByClassName("in_menu");
+var inMenu = document.getElementsByClassName("in-menu");
 
-for (var i = 0; i < in_menu.length; i++) {
-  in_menu[i].addEventListener("mouseover", function() {
-      // highlight the mouseover target
+for (var i = 0; i < inMenu.length; i++) {       //마우스 올렸을 때 테두리효과
+  inMenu[i].addEventListener("mouseover", function() {
       this.style.border = "white solid 2px";
       this.style.boxShadow = "inset 0 0 6.7px 3.3px #0fd4ff";
 
     }, false);
 
-  in_menu[i].addEventListener("mouseout", function() {
-      // highlight the mouseover target
+  inMenu[i].addEventListener("mouseout", function() {
       this.style.border = "none";
       this.style.boxShadow = "inset 0 0 0 0";
     }, false);
 }
 
 
-var todaysEvents_btn = document.getElementById("todaysEvents_btn");
+//define page variable
 var main = document.getElementById("main");
 var todaysEvents = document.getElementById("todaysEvents");
-var back_to_main_btn = document.getElementById("back_to_main_btn");
+var youtubeContainer = document.getElementById("youtube-container");
+// var eventsDetail = document.getElementById("events-detail");
 
-todaysEvents_btn.addEventListener("click", function(){
+//페이지 전환시키는 버튼
+var backToMainBtn = document.getElementById("back-to-main-btn");
+var todaysEventsBtn = document.getElementById("todaysEvents-btn");
+todaysEventsBtn.addEventListener("click", function(){
 
     main.style.display = 'none';
     todaysEvents.style.display = 'block';
 
 
-  
+
 }, false);
 
 
@@ -85,4 +87,7 @@ todaysEvents_btn.addEventListener("click", function(){
 window.onload = function() {
     printClock();
     todaysEvents.style.display = 'none';
+    // eventsDetail.style.display = 'none';
+    // youtubeContainer.style.display = 'none';
+
 }

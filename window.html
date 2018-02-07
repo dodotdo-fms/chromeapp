@@ -7,9 +7,10 @@
 <title>MYSTV</title>
 <link href="css/main.css" rel="stylesheet" type="text/css">
 <link href="css/todaysEvents.css" rel="stylesheet" type="text/css">
-<link href="css/Events_detail.css" rel="stylesheet" type="text/css">
+<link href="css/events-detail.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+  <!-- 메인 페이지 -->
   <div class="wrapper" id="main">
     <div class="slideshow-container">
       <img id="logo" src="images/drawable-hdpi/ic_logo.png">
@@ -38,94 +39,173 @@
       		</div>
       	</header>
     		<div class="menu">
-    		    <div class="in_menu" id="watchTV_btn">
-              <div class="menu_text">WATCH TV</div>
+    		    <div class="in-menu" id="watchTV-btn">
+              <div class="menu-text">WATCH TV</div>
       			</div>
-    			  <div class="in_menu" id="todaysEvents_btn">
-              <div class="menu_text">TODAY'S EVENTS</div>
+    			  <div class="in-menu" id="todaysEvents-btn">
+              <div class="menu-text">TODAY'S EVENTS</div>
               <!--<button onclick="location.href='./todaysEvents.html';">ya</button>-->
       			</div>
-            <div class="in_menu" id="request_btn">
-    				  <div class="menu_text">REQUEST</div>
+            <div class="in-menu" id="request-btn">
+    				  <div class="menu-text">REQUEST</div>
             </div>
 
-            <div class="in_menu" id="amenities_btn">
-    				  <div class="menu_text">AMENITIES</div>
+            <div class="in-menu" id="amenities-btn">
+    				  <div class="menu-text">AMENITIES</div>
             </div>
 
-            <div class="in_menu" id="excursions_btn">
-    				  <div class="menu_text">EXCURSIONS</div>
+            <div class="in-menu" id="excursions-btn">
+    				  <div class="menu-text">EXCURSIONS</div>
             </div>
 
-            <div class="in_menu" id="entertainment_btn">
-    				  <div class="menu_text">ENTERTAINMENT</div>
+            <div class="in-menu" id="entertainment-btn">
+    				  <div class="menu-text">ENTERTAINMENT</div>
             </div>
     	  </div>
       </div>
     </div>
   </div>
-
-  <div class="wrapper bl_body" id="todaysEvents">
+  <!-- TV events 페이지 -->
+  <div class="wrapper bl-body" id="todaysEvents">
     <header id="todaysheader">
       <div class="le">TODAY'S EVENTS</div>
-      <div class="ri" id="back_to_main_btn"><img src="images/drawable-hdpi/ic_back.png">Back</div>
+      <div class="ri" id="back-to-main-btn"><img src="images/drawable-hdpi/ic_back.png">Back</div>
     </header>
     <div class="contents">
-      <table class="todaystable" rules="rows">
+      <table id="todaystable" rules="rows">
         <tr>
           <th class="fir">Time</th>
           <th class="cen">Activity</th>
           <th class="last">Location</th>
         </tr>
-        <tr class="todaysrow" id="events_detail_btn">
+        <tr class="todaysrow" id="todaysrow-1">
           <td>14:00</td>
           <td>Free Advertising For Your Online Business</td>
-          <td class="last_col">Deck 13</td>
+          <td>Deck 13</td>
         </tr>
-        <tr class="todaysrow">
+        <tr class="todaysrow" id="todaysrow-2">
           <td>14:00</td>
           <td>Free Advertising For Your Online Business</td>
-          <td class="last_col">Deck 13</td>
+          <td>Deck 13</td>
         </tr>
-        <tr class="todaysrow">
+        <tr class="todaysrow" id="todaysrow-3">
           <td>14:00</td>
           <td>Free Advertising For Your Online Business</td>
-          <td class="last_col">Deck 13</td>
+          <td>Deck 13</td>
         </tr>
-        <tr class="todaysrow">
+        <tr class="todaysrow" id="todaysrow-4">
           <td>14:00</td>
           <td>Free Advertising For Your Online Business</td>
-          <td class="last_col">Deck 13</td>
+          <td>Deck 13</td>
         </tr>
-        <tr class="todaysrow">
+        <tr class="todaysrow" id="todaysrow-5">
           <td>14:00</td>
           <td>Free Advertising For Your Online Business</td>
-          <td class="last_col">Deck 13</td>
+          <td>Deck 13</td>
         </tr>
       </table>
       <div class="todayscontent">
-        <div class="event_pt">
-          <img src="images/tv_event.jpg">
+        <div class="event-pt">
+          <img class="event-img" src="images/event_1.jpg">
         </div>
         <p>Free Advertising For Your Online Business</p>
-        <a href="#" id="book_now">
+        <a href="#" class="book-now">
           BOOK NOW
         </a>
-        <a href="#" id="detail">
+        <a href="#" class="events-detail-btn">
           DETAIL
         </a>
       </div>
+      <div class="todayscontent">
+        <div class="event-pt">
+          <img class="event-img" src="images/event_2.jpg">
+        </div>
+        <p>Free Advertising For Your Online Business</p>
+        <a href="#" class="book-now">
+          BOOK NOW
+        </a>
+        <a href="#" class="events-detail-btn">
+          DETAIL
+        </a>
+      </div>
+      <div class="todayscontent">
+        <div class="event-pt">
+          <img class="event-img" src="images/event_3.jpg">
+        </div>
+        <p>Free Advertising For Your Online Business</p>
+        <a href="#" class="book-now">
+          BOOK NOW
+        </a>
+        <a href="#" class="events-detail-btn">
+          DETAIL
+        </a>
+      </div>
+      <div class="todayscontent">
+        <div class="event-pt">
+          <img class="event-img" src="images/event_4.jpg">
+        </div>
+        <p>Free Advertising For Your Online Business</p>
+        <a href="#" class="book-now">
+          BOOK NOW
+        </a>
+        <a href="#" class="events-detail-btn">
+          DETAIL
+        </a>
+      </div>
+      <div class="todayscontent">
+        <div class="event-pt">
+          <img class="event-img" src="images/event_5.jpg">
+        </div>
+        <p>Free Advertising For Your Online Business</p>
+        <a href="#" class="book-now">
+          BOOK NOW
+        </a>
+        <a href="#" class="events-detail-btn">
+          DETAIL
+        </a>
+      </div>
+
+
     </div>
 
   </div>
-
-  <div class="wrapper" id="events_detail">
-    <header id="detailheader">
+  <!-- TV events table에서 하나 클릭했을 때 보이는 detail 페이지 -->
+  <!-- <div class="wrapper" class="events-detail">
+    <header class="detailheader">
       <div class="le">Free Advertising For Your Online Business</div>
-      <div class="ri" id="back_to_Events_btn"><img src="images/drawable-hdpi/ic_back.png">Back</div>
+      <div class="ri" class="back-to-Events-btn"><img src="images/drawable-hdpi/ic_back.png">Back</div>
+    </header>
+  </div> -->
+  <!-- <div class="wrapper" class="events-detail">
+    <header class="detailheader">
+      <div class="le">Free Advertising For Your Online Business</div>
+      <div class="ri" class="back-to-Events-btn"><img src="images/drawable-hdpi/ic_back.png">Back</div>
     </header>
   </div>
+  <div class="wrapper" class="events-detail">
+    <header class="detailheader">
+      <div class="le">Free Advertising For Your Online Business</div>
+      <div class="ri" class="back-to-Events-btn"><img src="images/drawable-hdpi/ic_back.png">Back</div>
+    </header>
+  </div>
+  <div class="wrapper" class="events-detail">
+    <header class="detailheader">
+      <div class="le">Free Advertising For Your Online Business</div>
+      <div class="ri" class="back-to-Events-btn"><img src="images/drawable-hdpi/ic_back.png">Back</div>
+    </header>
+  </div>
+  <div class="wrapper" class="events-detail">
+    <header class="detailheader">
+      <div class="le">Free Advertising For Your Online Business</div>
+      <div class="ri" class="back-to-Events-btn"><img src="images/drawable-hdpi/ic_back.png">Back</div>
+    </header>
+  </div> -->
+  <!-- 유투브 홈페이지 webview로 잘 열리는지 확인 -->
+  <div class="wrapper" id="youtube-container">
+    <div class="back-to-ent-btn"><img src="images/drawable-hdpi/ic_back.png">Back</div>
+    <webview id="youtube" src="https://www.youtube.com/"></webview>
 
+  </div>
 
   <script src="javascript/main.js"></script>
   <script src="javascript/todaysEvents.js"></script>
