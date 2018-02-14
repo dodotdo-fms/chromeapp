@@ -65,11 +65,12 @@
       </div>
     </div>
   </div>
-  <!-- TV events 페이지 -->
-  <div class="wrapper bl-body" id="todaysEvents">
+
+  <!-- Today's events 페이지 -->
+  <div class="wrapper font-lighter" id="todaysEvents">
     <header id="todaysheader">
       <div class="le">TODAY'S EVENTS</div>
-      <div class="ri" id="back-to-main-btn"><img src="images/drawable-hdpi/ic_back.png">Back</div>
+      <div class="ri back-to-main-btn"><img src="images/drawable-hdpi/ic_back.png">Back</div>
     </header>
     <div class="contents">
       <table id="todaystable" rules="rows">
@@ -104,9 +105,9 @@
           <td>Deck 13</td>
         </tr>
       </table>
-      <div class="todayscontent">
+      <div class="todayscontent" id="default-content">
         <div class="event-pt">
-          <img class="event-img" src="images/event_1.jpg">
+          <img class="event-img" src="images/event_1.jpeg">
         </div>
         <p>Free Advertising For Your Online Business</p>
         <a href="#" class="book-now">
@@ -200,11 +201,59 @@
       <div class="ri" class="back-to-Events-btn"><img src="images/drawable-hdpi/ic_back.png">Back</div>
     </header>
   </div> -->
-  <!-- 유투브 홈페이지 webview로 잘 열리는지 확인 -->
-  <div class="wrapper" id="youtube-container">
-    <div class="back-to-ent-btn"><img src="images/drawable-hdpi/ic_back.png">Back</div>
-    <webview id="youtube" src="https://www.youtube.com/"></webview>
 
+
+  <!-- Entertainment 페이지 -->
+  <div class="wrapper font-lighter" id="entertainment">
+    <header id="ent-header">
+      <div class="le">Exhilaration. Relaxation. Enjoy these apps.</div>
+      <div class="ri back-to-main-btn"><img src="images/drawable-hdpi/ic_back.png">Back</div>
+    </header>
+    <div class="ent-contents">
+        <img class="ent-logo" id="youtube-btn" src="images/youtube.png">
+        <img class="ent-logo" id="amazonvideo-btn" src="images/amazonvideo.png">
+        <img class="ent-logo" id="hulu-btn" src="images/hulu.png">
+        <img class="ent-logo" id="netflix-btn" src="images/netflix.png">
+        <img class="ent-logo" id="BBC-btn" src="images/BBC.png">
+        <img class="ent-logo" id="hbogo-btn" src="images/hbogo.jpg">
+        <img class="ent-logo" id="pooq-btn" src="images/pooq.png">
+    </div>
+  </div>
+
+  <!-- youtube webview 페이지 -->
+  <div class="wrapper webview-container" id="youtube-container">
+    <div class="back-to-ent-btn"><img src="images/drawable-hdpi/ic_back.png">Back</div>
+    <!-- <div id="webview-back"><img src="images/drawable-hdpi/ic_back.png">Web Back</div> -->
+    <webview class="ent-webview" src="https://www.youtube.com/"></webview>
+  </div>
+  <!--primevideo webview 페이지 -->
+  <div class="wrapper webview-container" id="amazonvideo-container">
+    <div class="back-to-ent-btn"><img src="images/drawable-hdpi/ic_back.png">Back</div>
+    <webview class="ent-webview" src="https://www.primevideo.com/"></webview>
+  </div>
+  <!-- hulu webview 페이지 -->
+  <div class="wrapper webview-container" id="hulu-container">
+    <div class="back-to-ent-btn"><img src="images/drawable-hdpi/ic_back.png">Back</div>
+    <webview class="ent-webview" src="https://www.hulu.com/"></webview>
+  </div>
+  <!-- netflix webview 페이지 -->
+  <div class="wrapper webview-container" id="netflix-container">
+    <div class="back-to-ent-btn"><img src="images/drawable-hdpi/ic_back.png">Back</div>
+    <webview class="ent-webview" src="https://www.netflix.com/"></webview>
+  </div>
+  <!-- BBC webview 페이지 -->
+  <div class="wrapper webview-container" id="BBC-container">
+    <div class="back-to-ent-btn"><img src="images/drawable-hdpi/ic_back.png">Back</div>
+    <webview class="ent-webview" src="http://www.bbc.com/news/"></webview>
+  </div>
+  <!-- hbogo webview 페이지 -->
+  <div class="wrapper webview-container" id="hbogo-container">
+    <div class="back-to-ent-btn"><img src="images/drawable-hdpi/ic_back.png">Back</div>
+    <webview class="ent-webview" src="https://www.hbo.com/"></webview>
+  </div>
+  <div class="wrapper webview-container" id="pooq-container">
+    <div class="back-to-ent-btn"><img src="images/drawable-hdpi/ic_back.png">Back</div>
+    <webview class="ent-webview" src="https://www.pooq.co.kr"></webview>
   </div>
 
   <script src="javascript/main.js"></script>

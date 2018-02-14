@@ -67,19 +67,22 @@ for (var i = 0; i < inMenu.length; i++) {       //마우스 올렸을 때 테두
 //define page variable
 var main = document.getElementById("main");
 var todaysEvents = document.getElementById("todaysEvents");
+var entertainment = document.getElementById("entertainment");
 var youtubeContainer = document.getElementById("youtube-container");
+var amazonvideoContainer = document.getElementById("amazonvideo-container");
+var huluContainer = document.getElementById("hulu-container");
+var netflixContainer = document.getElementById("netflix-container");
+var BBCContainer = document.getElementById("BBC-container");
+var hbogoContainer = document.getElementById("hbogo-container");
+var pooqContainer = document.getElementById("pooq-container");
 // var eventsDetail = document.getElementById("events-detail");
 
 //페이지 전환시키는 버튼
-var backToMainBtn = document.getElementById("back-to-main-btn");
+
 var todaysEventsBtn = document.getElementById("todaysEvents-btn");
 todaysEventsBtn.addEventListener("click", function(){
-
     main.style.display = 'none';
     todaysEvents.style.display = 'block';
-
-
-
 }, false);
 
 
@@ -88,6 +91,12 @@ window.onload = function() {
     printClock();
     todaysEvents.style.display = 'none';
     // eventsDetail.style.display = 'none';
-    // youtubeContainer.style.display = 'none';
+    youtubeContainer.style.display = 'none';
+    amazonvideoContainer.style.display = 'none';
+    huluContainer.style.display = 'none';
+    netflixContainer.style.display = 'none';
+    BBCContainer.style.display = 'none';
+    hbogoContainer.style.display = 'none';
+    pooqContainer.style.display = 'none';
 
 }
