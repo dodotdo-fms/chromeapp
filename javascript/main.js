@@ -75,7 +75,7 @@ var netflixContainer = document.getElementById("netflix-container");
 var BBCContainer = document.getElementById("BBC-container");
 var hbogoContainer = document.getElementById("hbogo-container");
 var pooqContainer = document.getElementById("pooq-container");
-// var eventsDetail = document.getElementById("events-detail");
+var eventsDetail = document.getElementsByClassName("events-detail");
 
 //페이지 전환시키는 버튼
 
@@ -89,14 +89,15 @@ todaysEventsBtn.addEventListener("click", function(){
 
 window.onload = function() {
     printClock();
-    todaysEvents.style.display = 'none';
-    // eventsDetail.style.display = 'none';
-    youtubeContainer.style.display = 'none';
-    amazonvideoContainer.style.display = 'none';
-    huluContainer.style.display = 'none';
-    netflixContainer.style.display = 'none';
-    BBCContainer.style.display = 'none';
-    hbogoContainer.style.display = 'none';
-    pooqContainer.style.display = 'none';
+    // todaysEvents.style.display = 'none';
+    // // eventsDetail.style.display = 'none';
+    // youtubeContainer.style.display = 'none';
+    // amazonvideoContainer.style.display = 'none';
+    // huluContainer.style.display = 'none';
+    // netflixContainer.style.display = 'none';
+    // BBCContainer.style.display = 'none';
+    // hbogoContainer.style.display = 'none';
+    // pooqContainer.style.display = 'none';
+    // eventsDetail[0].style.display = 'none';
 
 }
