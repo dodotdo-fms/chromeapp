@@ -15,7 +15,7 @@ function showSlides() {
 
 function printClock() {
     var month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-	var day = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+	  var day = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
     var clock = document.getElementById("time");            // 출력할 장소 선택
     var currentDate = new Date();                                     // 현재시간
     var calendar = currentDate.getFullYear() + "-" + (currentDate.getMonth()+1) + "-" + currentDate.getDate() // 현재 날짜
@@ -77,8 +77,7 @@ var hbogoContainer = document.getElementById("hbogo-container");
 var pooqContainer = document.getElementById("pooq-container");
 var eventsDetail = document.getElementsByClassName("events-detail");
 
-//페이지 전환시키는 버튼
-
+//main page에서 today's events page로 넘어가는 버튼
 var todaysEventsBtn = document.getElementById("todaysEvents-btn");
 todaysEventsBtn.addEventListener("click", function(){
     main.style.display = 'none';

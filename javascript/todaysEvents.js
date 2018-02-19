@@ -1,12 +1,12 @@
 
 var todaysrow = document.getElementsByClassName("todaysrow");
-var todayscontent= document.getElementsByClassName("todayscontent");
+var todayscontent= document.getElementsByClassName("todayscontent");//table row 눌렀을 때 오른쪽에 뜨는 content
 
 
 
 function changeRowColor(num){
   todaysrow[num].addEventListener("click", function() {
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 5; i++) { //이전에 click된 row색 되돌리고 content 숨기기
       todaysrow[i].style.background = 'none';
       todaysrow[i].style.borderBottom = "grey";
       todayscontent[i].style.display = 'none';
@@ -26,61 +26,7 @@ changeRowColor(4);
 
 
 
-var backToEntBtn = document.getElementsByClassName("back-to-ent-btn");
-
-//엔터테인먼트 webview 열었을 때 back 눌러서 닫는 부분입니다
-
-function backToEnt(num){
-  backToEntBtn[num].addEventListener("click", function(){
-    this.parentNode.style.display = 'none';
-    entertainment.style.display = 'block';
-  }, false);
-}
-backToEnt(0);
-backToEnt(1);
-backToEnt(2);
-backToEnt(3);
-backToEnt(4);
-backToEnt(5);
-backToEnt(6);
-
-
-var entertainmentBtn = document.getElementById("entertainment-btn");
-
-entertainmentBtn.addEventListener("click", function(){
-
-  main.style.display = 'none';
-  entertainment.style.display = 'block';
-}, false);
-
-var youtubeBtn = document.getElementById("youtube-btn");
-var amazonvideoBtn = document.getElementById("amazonvideo-btn");
-var huluBtn = document.getElementById("hulu-btn");
-var netflixBtn = document.getElementById("netflix-btn");
-var BBCBtn = document.getElementById("BBC-btn");
-var hbogoBtn = document.getElementById("hbogo-btn");
-var pooqBtn = document.getElementById("pooq-btn");
-
-function openEntWebview(webviewBtn, webviewContainer){
-
-  webviewBtn.addEventListener("click", function(){
-
-    webviewContainer.style.display = 'block';
-    entertainment.style.display = 'none';
-
-  }, false);
-
-}
-
-openEntWebview(youtubeBtn, youtubeContainer);
-openEntWebview(amazonvideoBtn, amazonvideoContainer);
-openEntWebview(huluBtn, huluContainer);
-openEntWebview(netflixBtn, netflixContainer);
-openEntWebview(BBCBtn, BBCContainer);
-openEntWebview(hbogoBtn, hbogoContainer);
-openEntWebview(pooqBtn, pooqContainer);
-
-
+//main page로 가기 직전 page의 back 버튼
 var backToMainBtn = document.getElementsByClassName("back-to-main-btn");
 
 for(i = 0; i < backToMainBtn.length; i++){
@@ -129,9 +75,3 @@ backToEvents(3);
 backToEvents(4);
 backToEvents(5);
 backToEvents(6);
-
-var webviewBack = document.getElementById("webview-back");
-var entWebview = document.getElementsByClassName("ent-webview");
-
-if(entWebview[0].canGoBack())
-  webviewBack.addEventListener("click", entWebview[0].Back());
