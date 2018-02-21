@@ -16,7 +16,8 @@ function showSlides() {
 function printClock() {
     var month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 	  var day = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-    var clock = document.getElementById("time");            // 출력할 장소 선택
+    var clock = document.getElementById("time");          // 시간 출력할 장소 선택
+    var date = document.getElementById("date");          // 날짜 출력할 장소 선택
     var currentDate = new Date();                                     // 현재시간
     var calendar = currentDate.getFullYear() + "-" + (currentDate.getMonth()+1) + "-" + currentDate.getDate() // 현재 날짜
     var amPm = 'AM'; // 초기값 AM
@@ -32,7 +33,8 @@ function printClock() {
     if(currentSeconds >= 50){// 50초 이상일 때 색을 변환해 준다.
        currentSeconds = '<span style="color:#de1951;">'+currentSeconds+'</span>'
     }
-    clock.innerHTML = currentHours+":"+currentMinute+"<br>"+day[currentDate.getDay()] + ", " + currentDate.getDate() + " " + month[currentDate.getMonth()]; //날짜를 출력해 줌
+    clock.innerHTML = currentHours+":"+currentMinute;
+    date.innerHTML = day[currentDate.getDay()] + ", " + currentDate.getDate() + " " + month[currentDate.getMonth()]; //날짜를 출력해 줌
 
     setTimeout("printClock()",1000);         // 1초마다 printClock() 함수 호출
 }
@@ -88,15 +90,4 @@ todaysEventsBtn.addEventListener("click", function(){
 
 window.onload = function() {
     printClock();
-    // todaysEvents.style.display = 'none';
-    // // eventsDetail.style.display = 'none';
-    // youtubeContainer.style.display = 'none';
-    // amazonvideoContainer.style.display = 'none';
-    // huluContainer.style.display = 'none';
-    // netflixContainer.style.display = 'none';
-    // BBCContainer.style.display = 'none';
-    // hbogoContainer.style.display = 'none';
-    // pooqContainer.style.display = 'none';
-    // eventsDetail[0].style.display = 'none';
-
 }
