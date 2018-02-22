@@ -1,17 +1,4 @@
-var slideIndex = 0;
-showSlides();
 
-function showSlides() {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    for (i = 0; i < slides.length; i++) {
-       slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex> slides.length) {slideIndex = 1}
-    slides[slideIndex-1].style.display = "block";
-    setTimeout(showSlides, 10000); // Change image every 2 seconds
-}
 
 function printClock() {
     var month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -36,7 +23,7 @@ function printClock() {
     clock.innerHTML = currentHours+":"+currentMinute;
     date.innerHTML = day[currentDate.getDay()] + ", " + currentDate.getDate() + " " + month[currentDate.getMonth()]; //날짜를 출력해 줌
 
-    setTimeout("printClock()",1000);         // 1초마다 printClock() 함수 호출
+    setInterval("printClock()",1000);         // 1초마다 printClock() 함수 호출
 }
 
 function addZeros(num, digit) { // 자릿수 맞춰주기
@@ -48,21 +35,6 @@ function addZeros(num, digit) { // 자릿수 맞춰주기
 	    }
 	  }
 	  return zero + num;
-}
-
-var inMenu = document.getElementsByClassName("in-menu");
-
-for (var i = 0; i < inMenu.length; i++) {       //마우스 올렸을 때 테두리효과
-  inMenu[i].addEventListener("mouseover", function() {
-      this.style.border = "white solid 2px";
-      this.style.boxShadow = "inset 0 0 6.7px 3.3px #0fd4ff";
-
-    }, false);
-
-  inMenu[i].addEventListener("mouseout", function() {
-      this.style.border = "none";
-      this.style.boxShadow = "inset 0 0 0 0";
-    }, false);
 }
 
 
@@ -85,6 +57,96 @@ todaysEventsBtn.addEventListener("click", function(){
     main.style.display = 'none';
     todaysEvents.style.display = 'block';
 }, false);
+
+
+var onOffBtn = document.getElementsByClassName("on-off-btn");
+
+function moveOnOffBtn(btn) {
+  if(btn.style.left == 4 + '%') {
+    var pos = 4;
+    var id = setInterval(frame, 5);
+    function frame() {
+      if (pos == 54) {
+        clearInterval(id);
+      } else {
+        pos++;
+        btn.style.left = pos + '%';
+      }
+    }
+  }
+  else {
+    var pos = 44;
+    var id = setInterval(frame, 5);
+    function frame() {
+      if (pos == 4) {
+        clearInterval(id);
+      } else {
+        pos--;
+        btn.style.left = pos + '%';
+      }
+    }
+  }
+}
+
+onOffBtn[0].addEventListener("click", function(){
+  moveOnOffBtn(onOffBtn[0]);
+}, false);
+
+onOffBtn[1].addEventListener("click", function(){
+  moveOnOffBtn(onOffBtn[1]);
+}, false);
+
+function cancelCountBox(){
+  var cancelBtn = document.getElementsByClassName("cancel-btn");
+  var countBox = document.getElementsByClassName("count-box");
+  cancelBtn[0].addEventListener("click", function(){
+      countBox[0].style.display = "none";
+  }, false);
+  cancelBtn[1].addEventListener("click", function(){
+      countBox[1].style.display = 'none';
+  }, false);
+  cancelBtn[2].addEventListener("click", function(){
+      countBox[2].style.display = 'none';
+  }, false);
+
+}
+
+cancelCountBox();
+
+function openCountBox(){
+  var stuff = document.getElementsByClassName("stuff");
+  var countBox = document.getElementsByClassName("count-box");
+  stuff[0].addEventListener("click", function(){
+    countBox[0].style.display = 'block';
+  }, false);
+  stuff[1].addEventListener("click", function(){
+      countBox[1].style.display = 'block';
+  }, false);
+  stuff[2].addEventListener("click", function(){
+      countBox[2].style.display = 'block';
+  }, false);
+
+}
+
+// function openCountBox(){
+//   var stuff = document.getElementsByClassName("stuff");
+//   var countBox = document.getElementsByClassName("count-box");
+//   stuff[0].addEventListener("click", function(){
+//
+//     if(countBox[0].style.display == 'none'){
+//       countBox[0].style.display = 'block';
+//     }
+//   }, false);
+//   stuff[1].addEventListener("click", function(){
+//       countBox[1].style.display = 'block';
+//   }, false);
+//   stuff[2].addEventListener("click", function(){
+//       countBox[2].style.display = 'block';
+//   }, false);
+//
+// }
+
+openCountBox();
 
 
 

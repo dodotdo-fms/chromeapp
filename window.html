@@ -8,65 +8,98 @@
 <link href="css/main.css" rel="stylesheet" type="text/css">
 <link href="css/todaysEvents.css" rel="stylesheet" type="text/css">
 <link href="css/entertainment.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=La+Belle+Aurore|Niconne|Roboto:900" rel="stylesheet">
+<!-- <link href="https://fonts.googleapis.com/css?family=Roboto:900" rel="stylesheet"> -->
 </head>
 <body>
-  <!-- 메인 페이지 -->
-  <div class="wrapper" id="main">
-    <div class="slideshow-container">
 
-      <div class="mySlides fade">
-        <img class="logo" src="images/drawable-hdpi/ic_logo.png">
-        <img src="images/drawable-hdpi/main_image_bg.png" style="width:100%">
-      </div>
-
-      <div class="mySlides fade">
-        <img class="logo" src="images/drawable-hdpi/ic_logo.png">
-        <img src="images/drawable-hdpi/bg_02.png" style="width:100%">
-      </div>
-
-      <div class="mySlides fade">
-        <img class="logo" src="images/drawable-hdpi/ic_logo.png">
-        <img src="images/drawable-hdpi/bg_03.png" style="width:100%">
-      </div>
-      <div class="overlay">
-      	<header class="textAndTime"><font color="ffffff" size=40dp>
-      		<div class="roomAndName">
-      			RN 1952<br>
-      			James Kim
-      		</div>
-
-      		<div class="message">
-      			Welcome to Royal Caribbean<br>
-      			International.
-      		</div>
-      	</header>
-    		<div class="menu">
-    		    <div class="in-menu" id="watchTV-btn">
-              <div class="menu-text">WATCH TV</div>
-      			</div>
-    			  <div class="in-menu" id="todaysEvents-btn">
-              <div class="menu-text">TODAY'S EVENTS</div>
-              <!--<button onclick="location.href='./todaysEvents.html';">ya</button>-->
-      			</div>
-            <div class="in-menu" id="request-btn">
-    				  <div class="menu-text">REQUEST</div>
+    <div class="wrapper" id="main">
+      <header class="main-header">
+        <div class="main-le">
+          <div id="time"></div>
+          <div id="date"></div>
+        </div>
+        <div class="ri change-language"><img src="images/triangle@3x.png">English</div>
+      </header>
+      <div class="main-contents">
+        <div class="housekeeping">
+          <div class="housekeeping-name">HOUSEKEEPING</div>
+          <div>
+            <div class="on-off-message">DO NOT<br>DISTURB</div>
+            <!-- <div class="on-off-message on-off-blur">DO NOT<br>DISTURB</div> -->
+            <div class="on-off-container">
+              <img class="on-off-bar" src="images/on-off-bar@3x.png">
+              <img class="on-off-btn" src="images/on-off-button@3x.png">
             </div>
-
-            <div class="in-menu" id="amenities-btn">
-    				  <div class="menu-text">AMENITIES</div>
+            <div class="on-off-message">PLEASE<br>CLEAN</div>
+            <!-- <div class="on-off-message on-off-blur">PLEASE<br>CLEAN</div> -->
+            <div class="on-off-container">
+              <img class="on-off-bar" src="images/on-off-bar@3x.png">
+              <img class="on-off-btn" src="images/on-off-button@3x.png">
             </div>
+          </div>
 
-            <div class="in-menu" id="excursions-btn">
-    				  <div class="menu-text">EXCURSIONS</div>
+          <div class="housekeeping-wrapper">
+            <div class="stuff towel">
+              <div class="count-box">
+                <div class="count-text">Towel</div>
+                <img class="count-btn" src="images/triangle-2@3x.png">
+                <div class="count-num">5</div>
+                <img class="count-btn" src="images/triangle-2-copy@3x.png">
+                <div class="cancel-btn">Cancel</div>
+                <div class="save-btn">Save</div>
+              </div>
+              Towel
             </div>
+            <div class="stuff toilet">
+              <div class="count-box">
+                <div class="count-text">Towel</div>
+                <img class="count-btn" src="images/triangle-2@3x.png">
+                <div class="count-num">5</div>
+                <img class="count-btn" src="images/triangle-2-copy@3x.png">
+                <div class="cancel-btn">Cancel</div>
+                <div class="save-btn">Save</div>
+              </div>
+              Toilet<br>Paper
+            </div>
+            <div class="stuff water">
+              <div class="count-box">
+                <div class="count-text">Towel</div>
+                <img class="count-btn" src="images/triangle-2@3x.png">
+                <div class="count-num">5</div>
+                <img class="count-btn" src="images/triangle-2-copy@3x.png">
+                <div class="cancel-btn">Cancel</div>
+                <div class="save-btn">Save</div>
+              </div>
+              Water
+            </div>
+          </div>
+          <div class="request">
+            Your request.
+            <div class="request-send">SEND</div>
+          </div>
+        </div>
+        <div class="greeting">
+          Dear Mr.Kim, <br><br>Welcome to our hotel. We are
+          delighted you have chosen to stay with us,
+          and look to provide a memorable experience.
+          We truly appreciate  your  bussness and your
+          loyalty to our  brand.<br><br>
+          If there is anything we cando to make your
+          stay more enjoyable, please do not hesitate
+          to contact a Front Office Associate for further
+          assistance.
+        </div>
+        <div class="main-menu">
+          <div class="main-menu-btn" id="todaysEvents-btn">EVENT</div>
+          <div class="main-menu-btn">MOVIE</div>
+          <div class="main-menu-btn">GAME</div>
+          <div class="main-menu-btn" id="entertainment-btn">APPS</div>
+          <div class="main-menu-btn">HOTEL GUIDE</div>
+        </div>
 
-            <div class="in-menu" id="entertainment-btn">
-    				  <div class="menu-text">ENTERTAINMENT</div>
-            </div>
-    	  </div>
       </div>
     </div>
-  </div>
 
   <!-- Today's events 페이지 -->
   <div class="wrapper font-lighter" id="todaysEvents">
@@ -367,62 +400,6 @@ My link is on web’s most popular sites. You should be able to be part of those
     <webview class="ent-webview" src="https://www.pooq.co.kr"></webview>
   </div>
 
-  <div class="wrapper" id="new-main">
-    <header class="main-header">
-      <div class="main-le">
-        <div id="time"></div>
-        <div id="date"></div>
-      </div>
-      <div class="ri back-to-main-btn"><img src="images/drawable-hdpi/ic_back.png">Back</div>
-    </header>
-    <div class="main-contents">
-      <div class="housekeeping">
-        <div class="housekeeping-name">HOUSEKEEPING</div>
-        <div>
-          <div class="on-off-message">DO NOT<br>DISTURB</div>
-          <!-- <div class="on-off-message on-off-blur">DO NOT<br>DISTURB</div> -->
-          <div class="on-off-container">
-            <img class="on-off-bar" src="images/on-off-bar@3x.png">
-            <img class="on-off-btn" src="images/on-off-button@3x.png">
-          </div>
-          <div class="on-off-message">PLEASE<br>CLEAN</div>
-          <!-- <div class="on-off-message on-off-blur">PLEASE<br>CLEAN</div> -->
-          <div class="on-off-container">
-            <img class="on-off-bar" src="images/on-off-bar@3x.png">
-            <img class="on-off-btn" src="images/on-off-button@3x.png">
-          </div>
-        </div>
-        <div class="housekeeping-wrapper">
-          <div class="request-box towel">Towel</div>
-          <div class="request-box toilet">Toilet<br>Paper</div>
-          <div class="request-box water">Water</div>
-        </div>
-        <div class="request">
-          Your request.
-          <div class="request-send">SEND</div>
-        </div>
-      </div>
-      <div class="greeting">
-        Dear Mr.Kim, <br><br>Welcome to our hotel. We are
-        delighted you have chosen to stay with us,
-        and look to provide a memorable experience.
-        We truly appreciate  your  bussness and your
-        loyalty to our  brand.<br><br>
-        If there is anything we cando to make your
-        stay more enjoyable, please do not hesitate
-        to contact a Front Office Associate for further
-        assistance.
-      </div>
-      <div class="main-menu">
-        <div class="main-menu-btn">EVENT</div>
-        <div class="main-menu-btn">MOVIE</div>
-        <div class="main-menu-btn">GAME</div>
-        <div class="main-menu-btn">APPS</div>
-        <div class="main-menu-btn">HOTEL GUIDE</div>
-      </div>
-
-    </div>
-  </div>
   <script src="javascript/main.js"></script>
   <script src="javascript/todaysEvents.js"></script>
   <script src="javascript/entertainment.js"></script>
