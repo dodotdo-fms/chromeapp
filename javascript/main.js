@@ -96,6 +96,26 @@ onOffBtn[1].addEventListener("click", function(){
   moveOnOffBtn(onOffBtn[1]);
 }, false);
 
+
+
+function openCountBox(){
+  var stuff = document.getElementsByClassName("stuff");
+  var countBox = document.getElementsByClassName("count-box");
+  stuff[0].addEventListener("click", function(){
+    countBox[0].style.display = 'block';
+  }, false);
+  stuff[1].addEventListener("click", function(){
+    countBox[1].style.display = 'block';
+  }, false);
+  stuff[2].addEventListener("click", function(){
+    countBox[2].style.display = 'block';
+  }, false);
+
+}
+
+
+openCountBox();
+
 function cancelCountBox(){
   var cancelBtn = document.getElementsByClassName("cancel-btn");
   var countBox = document.getElementsByClassName("count-box");
@@ -112,43 +132,6 @@ function cancelCountBox(){
 }
 
 cancelCountBox();
-
-function openCountBox(){
-  var stuff = document.getElementsByClassName("stuff");
-  var countBox = document.getElementsByClassName("count-box");
-  stuff[0].addEventListener("click", function(){
-    countBox[0].style.display = 'block';
-  }, false);
-  stuff[1].addEventListener("click", function(){
-      countBox[1].style.display = 'block';
-  }, false);
-  stuff[2].addEventListener("click", function(){
-      countBox[2].style.display = 'block';
-  }, false);
-
-}
-
-// function openCountBox(){
-//   var stuff = document.getElementsByClassName("stuff");
-//   var countBox = document.getElementsByClassName("count-box");
-//   stuff[0].addEventListener("click", function(){
-//
-//     if(countBox[0].style.display == 'none'){
-//       countBox[0].style.display = 'block';
-//     }
-//   }, false);
-//   stuff[1].addEventListener("click", function(){
-//       countBox[1].style.display = 'block';
-//   }, false);
-//   stuff[2].addEventListener("click", function(){
-//       countBox[2].style.display = 'block';
-//   }, false);
-//
-// }
-
-openCountBox();
-
-
 
 window.onload = function() {
     printClock();
