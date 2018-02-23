@@ -38,43 +38,21 @@ function addZeros(num, digit) { // 자릿수 맞춰주기
 }
 
 
-//define page variable
-var main = document.getElementById("main");
-var todaysEvents = document.getElementById("todaysEvents");
-var entertainment = document.getElementById("entertainment");
-var youtubeContainer = document.getElementById("youtube-container");
-var amazonvideoContainer = document.getElementById("amazonvideo-container");
-var huluContainer = document.getElementById("hulu-container");
-var netflixContainer = document.getElementById("netflix-container");
-var BBCContainer = document.getElementById("BBC-container");
-var hbogoContainer = document.getElementById("hbogo-container");
-var pooqContainer = document.getElementById("pooq-container");
-var eventsDetail = document.getElementsByClassName("events-detail");
+function openEventPage(){
+  var main = document.getElementById("main");
+  var todaysEvents = document.getElementById("todaysEvents");
+  var todaysEventsBtn = document.getElementById("todaysEvents-btn");
+  todaysEventsBtn.addEventListener("click", function(){
+      main.style.display = 'none';
+      todaysEvents.style.display = 'block';
+  }, false);
+}
 
-//main page에서 today's events page로 넘어가는 버튼
-var todaysEventsBtn = document.getElementById("todaysEvents-btn");
-todaysEventsBtn.addEventListener("click", function(){
-    main.style.display = 'none';
-    todaysEvents.style.display = 'block';
-}, false);
+openEventPage();
 
 
-var onOffBtn = document.getElementsByClassName("on-off-btn");
-
-function moveOnOffBtn(btn) {
-  if(btn.style.left == 4 + '%') {
-    var pos = 4;
-    var id = setInterval(frame, 5);
-    function frame() {
-      if (pos == 54) {
-        clearInterval(id);
-      } else {
-        pos++;
-        btn.style.left = pos + '%';
-      }
-    }
-  }
-  else {
+function moveBtn(btn) {//main page do not disturb, please clean btn 이동
+  if(btn.style.left == 54 + '%') {//버튼이 오른쪽에 가있을 때 left 값이 4가 될 때까지 왼쪽으로 이동
     var pos = 44;
     var id = setInterval(frame, 5);
     function frame() {
@@ -86,17 +64,32 @@ function moveOnOffBtn(btn) {
       }
     }
   }
+  else{ //버튼이 왼쪽에 가있을 때 left 값이 54가 될 때까지 오른쪽으로 이동
+    var pos = 4;
+    var id = setInterval(frame, 5);
+    function frame() {
+      if (pos == 54) {
+        clearInterval(id);
+      } else {
+        pos++;
+        btn.style.left = pos + '%';
+      }
+    }
+  }
+
 }
 
-onOffBtn[0].addEventListener("click", function(){
-  moveOnOffBtn(onOffBtn[0]);
-}, false);
+function moveOnOffBtn(){ //moveBtn 함수 호출
+  var onOffBtn = document.getElementsByClassName("on-off-btn");
+  onOffBtn[0].addEventListener("click", function(){
+    moveBtn(onOffBtn[0]);
+  }, false);
+  onOffBtn[1].addEventListener("click", function(){
+    moveBtn(onOffBtn[1]);
+  }, false);
+}
 
-onOffBtn[1].addEventListener("click", function(){
-  moveOnOffBtn(onOffBtn[1]);
-}, false);
-
-
+moveOnOffBtn();
 
 function openCountBox(){
   var stuff = document.getElementsByClassName("stuff");
