@@ -1,5 +1,5 @@
 # chromeapp
-
+현재(2018/02/23) version은 2.3.3으로 등록되어 있다.
 
 # window.html
 전체 html 내용이 모두 담겨 있다.
