@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+.font-lighter {font-family:sans-serif;
+      font-weight: lighter;
+}
+
+.wrapper{
+  background-color: #212529;
+  color: white;
+  width:100%;
+  min-height:100%;
+}
+
+.normal-header{
+  width: 100%;
+  padding-top: 5%;
+/*  height:30%;*/
+  font-size: 3.5vw;
+  font-weight: lighter;
+  margin-bottom: 10%;
+/*  line-height: 30%;*/
+}
+
+.le{
+  float: left;
+  margin-left: 5%;
+  font-size: 4vw;
+}
+
+.font-normal{
+    font-weight: normal;
+    width: 45%;
+}
+.ri{
+    float: right;
+    margin-right: 5%;
+    width:10%;
+}
+.ri img{
+    /*display: inline-block;*/
+    /*float: left;*/
+    /*margin: 0;*/
+    width: 17%;
+    padding-right: 5%;
+}
+.contents{
+    clear: both;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    height: 85%;
+    font-weight: lighter;
+}
+
+.remote-controller {
+    display: inline-block;
+    width: 39.5%;
+    height: 715px;
+    vertical-align: top; 
+}
+
+.remote-controller-manual {
+    display: inline-block;
+    width: 60%;
+    height: 715px;
+    vertical-align: baseline; 
+}
+
+.manual-top {
+    margin-left: 4.4%;
+    padding-bottom: 58px;
+    font-family: Roboto;
+    font-size: 50px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff; 
+}
+
+.manual-bottom {
+    margin-left: 4.4%;
+}
+
+.manual-text {
+    width: 100%;
+    font-family: Roboto;
+    font-size: 50px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+    vertical-align: middle;
+}
+
+.ic-button img {
+    width: 105px;
+    height: 105px;
+    vertical-align: middle;
+}
+  

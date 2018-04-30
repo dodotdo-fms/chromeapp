@@ -50,6 +50,17 @@ function openEventPage(){
 
 openEventPage();
 
+function openWatchTVPage(){
+  var main = document.getElementById("main");
+  var watchTVEvents = document.getElementById("watchTV");
+  var watchTVEventsBtn = document.getElementById("watchTV-btn");
+  watchTVEventsBtn.addEventListener("click", function(){
+      main.style.display = 'none';
+      watchTVEvents.style.display = 'block';
+  }, false);
+}
+
+openWatchTVPage();
 
 function moveBtn(btn) {//main page do not disturb, please clean btn 이동
   if(btn.style.left == 54 + '%') {//버튼이 오른쪽에 가있을 때 left 값이 4가 될 때까지 왼쪽으로 이동
