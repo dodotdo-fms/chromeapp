@@ -20,7 +20,7 @@
 /*  height:30%;*/
   font-size: 3.5vw;
   font-weight: lighter;
-  margin-bottom: 10%;
+/*  margin-bottom: 10%; */
 /*  line-height: 30%;*/
 }
 
@@ -34,11 +34,11 @@
   font-weight: normal;
   width: 45%;
 }
+
 .ri{
   float: right;
   margin-right: 5%;
-  width:10%;
-
+  width: 12%;
 }
 
 .ri img{

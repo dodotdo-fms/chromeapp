@@ -62,6 +62,18 @@ function openWatchTVPage(){
 
 openWatchTVPage();
 
+function openRoomServicePage(){
+  var main = document.getElementById("main");
+  var roomServiceEvents = document.getElementById("roomService");
+  var roomServiceEventBtn = document.getElementById("roomService-btn");
+  roomServiceEventBtn.addEventListener("click", function(){
+      main.style.display = 'none';
+      roomServiceEvents.style.display = 'block';
+  }, false);
+}
+
+openRoomServicePage();
+
 function moveBtn(btn) {//main page do not disturb, please clean btn 이동
   if(btn.style.left == 54 + '%') {//버튼이 오른쪽에 가있을 때 left 값이 4가 될 때까지 왼쪽으로 이동
     var pos = 44;
