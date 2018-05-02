@@ -173,6 +173,24 @@
     </header>
     <div class="contents">
       <div class="requestManual">Our front of house staff are always ready to fulfill any requests.<br> Feel free to ask any questions.</div>
+      <div class="request-form">
+        <form id="request-form" action="/request" enctype="multipart/form-data" method="post">
+          <div class="text-form">
+            <textarea name="request-text" id="request-text">Speak requests using the voice input button in remote controller.
+            </textarea>
+          </div>
+          <div class="button-group1">
+            <button type="submit" name="shampoo" value="Shampoo"></button>
+            <button type="submit" name="slippers" value="Slippers"></button>
+            <button type="submit" name="towels" value="Towels"></button>
+          </div>
+          <div class="button-group2">
+            <button type="submit" name="toiletTissue" value="Toilet Tissue"></button>
+            <button type="submit" name="toothbrush" value="Toothbrush"></button>
+            <button type="submit" name="brush" value="Brush"></button> 
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 
