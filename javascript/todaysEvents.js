@@ -41,16 +41,16 @@ function backToMainPage(){
 backToMainPage();
 
 
-function openEventsDetail(num){
-  var todaysEvents = document.getElementById("todaysEvents");
-  var eventsDetail = document.getElementsByClassName("events-detail");
-  var eventsDetailBtn = document.getElementsByClassName("events-detail-btn");
-  eventsDetailBtn[num].addEventListener("click", function(){
-      todaysEvents.style.display = 'none';
-      eventsDetail[num].style.display = 'block';
-  }, false);
+// function openEventsDetail(num){
+//   var todaysEvents = document.getElementById("todaysEvents");
+//   var eventsDetail = document.getElementsByClassName("events-detail");
+//   var eventsDetailBtn = document.getElementsByClassName("events-detail-btn");
+//   eventsDetailBtn[num].addEventListener("click", function(){
+//       todaysEvents.style.display = 'none';
+//       eventsDetail[num].style.display = 'block';
+//   }, false);
 
-}
+// }
 
 
 function backToEvents(num){
@@ -66,6 +66,6 @@ function backToEvents(num){
 }
 
 for(i=0; i<5; i++){
-  openEventsDetail(i);
+  // openEventsDetail(i);
   backToEvents(i);
 }

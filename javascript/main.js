@@ -1,4 +1,45 @@
+// var serverAddress = 'http://localhost:8001'
+var serverAddress = 'http://52.78.230.146';
 
+function getProfile() {
+	var roomNumber = 1001;
+	var arg = {
+		url: serverAddress + '/stv/guest_info',
+		type: 'post',
+		data: {
+			'hotelName': 'FSDH',
+			'roomName': roomNumber
+		},
+		dataType: 'json',
+		async: true,
+		success: function (js) {
+      console.log(js);
+      if (js.data === null || js.data === undefined) {
+        console.log(js);
+        return;
+      }
+
+      var greetingText = 'Dear ' + js.data.nameTitle + '. ' + js.data.lastName + ', ';
+      greetingText += '<br><br> \
+      Welcome to our hotel. We are \
+      delighted you have chosen to stay with us, \
+      and look to provide a memorable experience. \
+      We truly appreciate  your  bussness and your \
+      loyalty to our  brand.<br><br> \
+      If there is anything we cando to make your \
+      stay more enjoyable, please do not hesitate \
+      to contact a Front Office Associate for further \
+      assistance.';
+
+      $('.greeting').html(greetingText);
+		}
+	};
+
+	console.log(arg);
+	jQuery.ajax(arg);
+}
+
+getProfile();
 
 function printClock() {
     var month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -50,6 +91,25 @@ function openEventPage(){
 
 openEventPage();
 
+function sendServiceStatus (data) {
+  var arg = {
+    url: serverAddress + '/stv/service_status',
+    type: 'post',
+    data: {
+      'hotelName': 'FSDH',
+      'roomName': data.roomName,
+      'status': data.status
+    },
+    dataType: 'json',
+    async: true,
+    success: function (js) {
+      console.log(js);
+    }
+  };
+
+  jQuery.ajax(arg);
+}
+
 function moveBtn(btn) {//main page do not disturb, please clean btn 이동
   if(btn.style.left == 54 + '%') {//버튼이 오른쪽에 가있을 때 left 값이 4가 될 때까지 왼쪽으로 이동
     var pos = 44;
@@ -62,8 +122,7 @@ function moveBtn(btn) {//main page do not disturb, please clean btn 이동
         btn.style.left = pos + '%';
       }
     }
-  }
-  else{ //버튼이 왼쪽에 가있을 때 left 값이 54가 될 때까지 오른쪽으로 이동
+  } else { //버튼이 왼쪽에 가있을 때 left 값이 54가 될 때까지 오른쪽으로 이동
     var pos = 4;
     var id = setInterval(frame, 5);
     function frame() {
@@ -75,16 +134,34 @@ function moveBtn(btn) {//main page do not disturb, please clean btn 이동
       }
     }
   }
-
 }
 
 function moveOnOffBtn(){ //moveBtn 함수 호출
   var onOffBtn = document.getElementsByClassName("on-off-btn");
   onOffBtn[0].addEventListener("click", function(){
     moveBtn(onOffBtn[0]);
+    if (onOffBtn[0].style.left == 54 + '%') {
+      // button right -> left (건드리지 말아주세요)
+      var data = {
+        roomName: 1001,
+        status: 1
+      };
+
+      sendServiceStatus(data);
+    } 
   }, false);
   onOffBtn[1].addEventListener("click", function(){
     moveBtn(onOffBtn[1]);
+    if (onOffBtn[1].style.left == 54 + '%') {
+      // button right -> left (건드리지 말아주세요)
+      var data = {
+        roomName: 1001,
+        status: 2
+      };
+
+      sendServiceStatus(data);
+    } 
+
   }, false);
 }
 
@@ -94,13 +171,28 @@ function openCountBox(){
   var stuff = document.getElementsByClassName("stuff");
   var countBox = document.getElementsByClassName("count-box");
   stuff[0].addEventListener("click", function(){
-    countBox[0].style.display = 'block';
+    var data = {
+      'roomName': 1001,
+      'item': 'Towel'
+    };
+
+    sendRequest(data);
   }, false);
   stuff[1].addEventListener("click", function(){
-    countBox[1].style.display = 'block';
+    var data = {
+      'roomName': 1001,
+      'item': 'Toilet Tissue'
+    };
+
+    sendRequest(data);
   }, false);
   stuff[2].addEventListener("click", function(){
-    countBox[2].style.display = 'block';
+    var data = {
+      'roomName': 1001,
+      'item': 'Water'
+    };
+
+    sendRequest(data);
   }, false);
 
 }

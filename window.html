@@ -99,7 +99,7 @@
       <div class="main-menu">
         <div class="main-menu-btn" id="watchTV-btn">WATCH TV</div>
         <div class="main-menu-btn" id="roomService-btn">ROOM SERVICE</div>
-        <div class="main-menu-btn" id="hotelGuide-btn">HOTEL GUIDE</div>
+        <div class="main-menu-btn" id="todaysEvents-btn">HOTEL GUIDE</div>
         <div class="main-menu-btn" id="entertainment-btn">ENTERTAINMENT</div>
         <div class="main-menu-btn" id="request-btn">REQUEST</div>
      </div>
@@ -174,43 +174,50 @@
     <div class="contents">
       <div class="requestManual">Our front of house staff are always ready to fulfill any requests.<br> Feel free to ask any questions.</div>
       <div class="request-form">
-        <form id="request-form" action="/request" enctype="multipart/form-data" method="post">
+        <!--form id="request-form" action="/request" enctype="multipart/form-data" method="post"-->
           <div class="text-form">
             <textarea name="request-text" id="request-text">Speak requests using the voice input button in remote controller.
             </textarea>
           </div>
-          <button type="submit" name="send" value="sendText">
-            <span class="requestSend">SEND</span>
-          </button>
-        </form>
+          <div class="div_start">
+            <button id="start_button">
+              <img alt="start" id="start_img" src="images/mic.gif">
+            </button>
+          </div>
+          <div class="submit_button">
+            <button type="submit" id="sendText" name="send" value="sendText">
+              <span class="requestSend">SEND</span>
+            </button>
+          </div>
+        <!--/form-->
       </div>
       <div class="requestShortcut">        
         <div class="button-group1">
-          <button type="submit" name="shampoo" value="Shampoo">
+          <button type="submit" id="shampoo" name="shampoo" value="Shampoo">
             <img src="images/bottle-hair-liquid-shampoo-soap-icon-7.png" />
             <span class="shampoo-test">Shampoo</span>
           </button>
-          <button type="submit" name="slippers" value="Slippers">
+          <button type="submit" id="slippers" name="slippers" value="Slippers">
             <img src="images/7701-200.png" />
             <span class="slippers-text">Slippers</span>
           </button>
         </div>
         <div class="button-group2">
-          <button type="submit" name="towels" value="Towels">
+          <button type="submit" id="towels" name="towels" value="Towels">
             <img src="images/household-towel-icon.png" />
             <span class="towels-text">Towels</span>              
           </button>
-          <button type="submit" name="toiletTissue" value="Toilet Tissue">
+          <button type="submit" id="toiletTissue" name="toiletTissue" value="Toilet Tissue">
             <img src="images/tissue-paper-camping-travel-bathroom-tool-3-f-3-fd-240-acc-7-eb-76-512-x-512.png" />
             <span class="toiletTissue-text">Toilet Tissue</span>              
           </button>
         </div>
         <div class="button-group3">
-          <button type="submit" name="toothbrush" value="Toothbrush">
+          <button type="submit" id="toothbrush" name="toothbrush" value="Toothbrush">
             <img src="images/111401-paste-512-x-512.png" />
             <span class="toothbrush-text">Toothbrush</span>              
           </button>
-          <button type="submit" name="brush" value="Brush">
+          <button type="submit" id="brush" name="brush" value="Brush">
             <img src="images/hair-brush.png" />
             <span class="brush-text">Brush</span>              
           </button> 
@@ -219,8 +226,47 @@
     </div>
   </div>
 
-  <!-- Today's events 페이지 -->
   <div class="wrapper font-lighter" id="todaysEvents">
+    <header class="normal-header">
+      <div class="le">HOTEL GUIDE</div>
+      <div class="ri back-to-main-btn"><img src="images/drawable-hdpi/ic_back.png">Back</div>
+    </header>
+    <div class="contents">
+      <table id="todaystable" rules="rows">
+        <tr>
+        </tr>
+        <tr class="todaysrow" id="todaysrow-1">
+          <td>20F</td>
+          <td>Club Lounge</td>
+          <td></td>
+        </tr>
+        <tr class="todaysrow" id="todaysrow-2">
+          <td>3F</td>
+          <td>Conference rooms, Banquet halls</td>
+          <td></td>
+        </tr>
+        <tr class="todaysrow" id="todaysrow-3">
+          <td>2F</td>
+          <td>Japaness restaurant, Chinese restaurant</td>
+          <td></td>
+        </tr>
+        <tr class="todaysrow" id="todaysrow-4">
+          <td>1F</td>
+          <td>Entrance Lobby, Front Desk</td>
+          <td></td>
+        </tr>
+        <tr class="todaysrow" id="todaysrow-5">
+          <td>B1F</td>
+          <td>Swimming pool, Gym, Sauna</td>
+          <td></td>
+        </tr>
+        <tr></tr>
+      </table>
+ 	</div>
+  </div>
+
+  <!-- Today's events 페이지 -->
+  <!--div class="wrapper font-lighter" id="todaysEvents">
     <header class="normal-header">
       <div class="le">TODAY'S EVENTS</div>
       <div class="ri back-to-main-btn"><img src="images/drawable-hdpi/ic_back.png">Back</div>
@@ -318,10 +364,9 @@
           DETAIL
         </a>
       </div>
-
     </div>
+  </div-->
 
-  </div>
   <!-- TV events table에서 하나 클릭했을 때 보이는 detail 페이지 -->
   <div class="wrapper events-detail">
     <header class="normal-header">
@@ -521,6 +566,7 @@
     <webview class="ent-webview" src="https://www.pooq.co.kr"></webview>
   </div>
 
+  <script src="javascript/jquery-3.3.1.min.js"></script>
   <script src="javascript/main.js"></script>
   <script src="javascript/todaysEvents.js"></script>
   <script src="javascript/entertainment.js"></script>
