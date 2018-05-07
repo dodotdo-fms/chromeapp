@@ -78,7 +78,6 @@ function addZeros(num, digit) { // 자릿수 맞춰주기
 	  return zero + num;
 }
 
-
 function openEventPage(){
   var main = document.getElementById("main");
   var todaysEvents = document.getElementById("todaysEvents");
@@ -140,7 +139,8 @@ function moveOnOffBtn(){ //moveBtn 함수 호출
   var onOffBtn = document.getElementsByClassName("on-off-btn");
   onOffBtn[0].addEventListener("click", function(){
     moveBtn(onOffBtn[0]);
-    if (onOffBtn[0].style.left == 54 + '%') {
+    console.log(onOffBtn[0].style.left);
+    if (onOffBtn[0].style.left !== 54 + '%') {
       // button right -> left (건드리지 말아주세요)
       var data = {
         roomName: 1001,
@@ -150,10 +150,12 @@ function moveOnOffBtn(){ //moveBtn 함수 호출
       sendServiceStatus(data);
     } 
   }, false);
+
   onOffBtn[1].addEventListener("click", function(){
     moveBtn(onOffBtn[1]);
-    if (onOffBtn[1].style.left == 54 + '%') {
-      // button right -> left (건드리지 말아주세요)
+    console.log(onOffBtn[1].style.left);
+    if (onOffBtn[1].style.left !== 54 + '%') {
+      // button right -> left (청소해 주세요)
       var data = {
         roomName: 1001,
         status: 2

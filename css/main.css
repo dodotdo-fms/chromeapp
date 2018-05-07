@@ -165,6 +165,7 @@ figcaption {
   width: 30%;
   margin-bottom: 8.8vh;
 }
+
 .on-off-bar{
   width: 100%;
   display: inline-block;
@@ -174,13 +175,12 @@ figcaption {
 
 }
 
-.on-off-btn{
-
+.on-off-btn {
   display: inline-block;
   width: 42%;
   position: absolute;
   top: 1.35vh;
-  left: 54%;
+  left: 4%;
 }
 
 .housekeeping-name{

@@ -8,6 +8,8 @@
 		}
 	},
 	"permissions": [
+		"audio",
+		"audioCapture",
 	  "webview",
 	  "https://www.google.com/"
 	],

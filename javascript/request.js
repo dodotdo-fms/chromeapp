@@ -60,6 +60,7 @@ function initRecognition() {
             }
 
             if (event.error == 'not-allowed') {
+                console.log(event.timeStamp + ', ' + start_timestamp);
                 if (event.timeStamp - start_timestamp < 100) {
                     showInfo('info_blocked');
                 } else {
@@ -79,37 +80,31 @@ function initRecognition() {
                 showInfo('info_start');
                 return;
             }
-            showInfo('');
-            if (window.getSelection) {
-                window.getSelection().removeAllRanges();
-                var range = document.createRange();
-                range.selectNode(document.getElementById('final_span'));
-                window.getSelection().addRange(range);
-            }
+            // showInfo('');
+            // if (window.getSelection) {
+            //     window.getSelection().removeAllRanges();
+            //     var range = document.createRange();
+            //     range.selectNode(document.getElementById('final_span'));
+            //     window.getSelection().addRange(range);
+            // }
         };
 
         recognition.onresult = function(event) {
             var interim_transcript = '';
             for (var i = event.resultIndex; i < event.results.length; ++i) {
                 if (event.results[i].isFinal) {
-                final_transcript += event.results[i][0].transcript;
-                } else {
-                interim_transcript += event.results[i][0].transcript;
-                }
+                    final_transcript += event.results[i][0].transcript;
+                } 
             }
             final_transcript = capitalize(final_transcript);
-            final_span.innerHTML = linebreak(final_transcript);
-            interim_span.innerHTML = linebreak(interim_transcript);
-            if (final_transcript || interim_transcript) {
-                showButtons('inline-block');
-            }
+            document.getElementById('request-text').value = linebreak(final_transcript);
         };
     }
 }
 
-function startRecognition (event) {
+function startRecognition () {
     var startButton = document.getElementById('start_button');
-    startButton.addEventListener('click', function () {
+    startButton.addEventListener('click', function (event) {
         console.log('Test');
         if (recognizing) {
             recognition.stop();
@@ -117,16 +112,29 @@ function startRecognition (event) {
         }
     
         final_transcript = '';
-        //    recognition.lang = select_dialect.value;
         recognition.lang = 'en-US';
         recognition.start();
         ignore_onend = false;
-//        final_span.innerHTML = '';
-//        interim_span.innerHTML = '';
+        document.getElementById('request-text').value = '';
         start_img.src = 'images/mic-slash.gif';
-//        showInfo('info_allow');
         start_timestamp = event.timeStamp;
     }, false);
+}
+
+function upgrade() {
+    start_button.style.visibility = 'hidden';
+    showInfo('info_upgrade');
+}
+
+var two_line = /\n\n/g;
+var one_line = /\n/g;
+function linebreak(s) {
+    return s.replace(two_line, '<p></p>').replace(one_line, '<br>');
+}
+
+var first_char = /\S/;
+function capitalize(s) {
+    return s.replace(first_char, function(m) { return m.toUpperCase(); });
 }
 
 function sendRequest (data) {
@@ -220,6 +228,26 @@ function addBruchBtnEvent () {
     }, false);
 }
 
+function addSendBtnEvent () {
+    var towelBtn = document.getElementById('sendText');
+    towelBtn.addEventListener('click', function () {
+        var data = {
+            'roomName': 1001,
+            'item': document.getElementById('request-text').value
+        };
+
+        sendRequest(data);
+        document.getElementById('request-text').value = 'Speak requests using the voice input button in remote controller.';
+    }, false);
+}
+
+function addTextAreaEvent() {
+    var textArea = document.getElementById('request-text');
+    textArea.addEventListener('click', function () {
+        textArea.value = '';
+    });
+}
+
 initRecognition();
 startRecognition();
 addTowelBtnEvent();
@@ -228,3 +256,5 @@ addToothBrushBtnEvent();
 addSlipperBtnEvent();
 addToiletTissueBtnEvent();
 addShampooBtnEvent();
+addSendBtnEvent();
+addTextAreaEvent();
