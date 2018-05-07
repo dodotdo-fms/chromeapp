@@ -91,14 +91,32 @@ function initRecognition() {
 
         recognition.onresult = function(event) {
             var interim_transcript = '';
+            var writeText = '';
+
             for (var i = event.resultIndex; i < event.results.length; ++i) {
                 if (event.results[i].isFinal) {
                     final_transcript += event.results[i][0].transcript;
+                } else {
+                    interim_transcript += event.results[i][0].transcript 
                 } 
             }
+            
             final_transcript = capitalize(final_transcript);
-            document.getElementById('request-text').value = linebreak(final_transcript);
+            interim_transcript = capitalize(interim_transcript);
+
+            if (final_transcript.length > 0) {
+                writeText = final_transcript; 
+            } else {
+                writeText = interim_transcript; 
+            }
+
+            document.getElementById('request-text').value = linebreak(writeText);
         };
+
+        recognition.onspeechend = function() {
+            console.log('Speech has stopped being detected');
+            recognition.stop();
+        }
     }
 }
 
@@ -257,4 +275,4 @@ addSlipperBtnEvent();
 addToiletTissueBtnEvent();
 addShampooBtnEvent();
 addSendBtnEvent();
-addTextAreaEvent();
+//addTextAreaEvent();
