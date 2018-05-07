@@ -1,7 +1,7 @@
 {
 	"name": "MySTV",
 	"description": "My STV.",
-	"version": "0.2.6",
+	"version": "0.2.7",
 	"app": {
 		"background": {
 		  "scripts": ["background.js"]
